@@ -18,6 +18,10 @@ The compile command
 * [Raspberry Pi][1] running [Raspbian][2] OS
 * Installed [Wiring Pi][3]
 * First LED functionality added
+6 sep 2015
+* First attempt to control a stepper motor
+* Controlling a 6V motor
+* Configuring WiFi adapter, connects on boot (finally)
 
 [1]: https://www.raspberrypi.org/
 [2]: https://www.raspberrypi.org/downloads/raspbian/
