@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // amount of steps is a product of 4
-const int STEPS = 12;
+const int STEPS = 4;
 const int DELAY = 1000;
 
 // pin name = pin number
@@ -35,6 +35,11 @@ void setStep(const int in1, const int in2,const int in3, const int in4){
   digitalWrite(IN4, in4);
 }
 
+void pauze(const int time){
+  setStep(LOW,LOW,LOW,LOW);
+  delay(time);
+}
+
 void turnOff(){
   digitalWrite(ENA, LOW);
   digitalWrite(ENB, LOW);
@@ -50,20 +55,35 @@ int main(){
   digitalWrite(ENA, HIGH);
   digitalWrite(ENB, HIGH);
 
+  pauze(7* DELAY);
+
   
   for(int i=0; i<STEPS; i+=4){
     cout << "Step " << i + 1 << endl;
     setStep(HIGH, LOW, HIGH, LOW);
     delay(DELAY);
+    pauze(500);
     cout << "Step " << i + 2 << endl;
-    setStep(LOW, HIGH, HIGH, LOW);
-    delay(DELAY);
-    cout << "Step " << i + 3 << endl;
     setStep(LOW, HIGH, LOW, HIGH);
     delay(DELAY);
+    pauze(500);
+    cout << "Step " << i + 3 << endl;
+    setStep(LOW, HIGH, HIGH, LOW);
+    delay(DELAY);
+    pauze(500);
     cout << "Step " << i + 4 << endl;
     setStep(HIGH, LOW, LOW, HIGH);
     delay(DELAY);
+    delay(DELAY);
+    pauze(500);
+
+    setStep(LOW, HIGH, HIGH, LOW);
+    delay(DELAY * 4);
+    pauze(500);
+
+    //setStep(HIGH, LOW, LOW, HIGH);
+    //delay(DELAY * 4);
+    //pauze(500);
   }
 
   turnOff();
