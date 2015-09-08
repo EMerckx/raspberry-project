@@ -9,18 +9,12 @@ const int STEPS = 4;
 const int DELAY = 1000;
 
 // pin name = pin number
-const int ENA = 5;
-const int ENB = 6;
 const int IN1 = 0;
 const int IN2 = 1;
 const int IN3 = 2;
 const int IN4 = 3;
 
 void initPins(){
-  // pins ENA and ENB
-  pinMode(ENA,OUTPUT);
-  pinMode(ENB,OUTPUT);
-
   // pins for lines
   pinMode(IN1,OUTPUT);
   pinMode(IN2,OUTPUT);
@@ -29,6 +23,7 @@ void initPins(){
 }
 
 void setStep(const int in1, const int in2,const int in3, const int in4){
+  cout << "pin1=" << in1 << " pin2=" << in2 << " pin3=" << in3 << " pin4=" << in4 << endl;
   digitalWrite(IN1, in1);
   digitalWrite(IN2, in2);
   digitalWrite(IN3, in3);
@@ -41,9 +36,6 @@ void pauze(const int time){
 }
 
 void turnOff(){
-  digitalWrite(ENA, LOW);
-  digitalWrite(ENB, LOW);
-
   setStep(LOW,LOW,LOW,LOW);
 }
 
@@ -51,39 +43,33 @@ int main(){
   wiringPiSetup();
 
   initPins();
-  
-  digitalWrite(ENA, HIGH);
-  digitalWrite(ENB, HIGH);
 
-  pauze(7* DELAY);
+  turnOff();
+  
+  pauze(3* DELAY);
 
   
   for(int i=0; i<STEPS; i+=4){
+    
     cout << "Step " << i + 1 << endl;
     setStep(HIGH, LOW, HIGH, LOW);
     delay(DELAY);
     pauze(500);
+    
     cout << "Step " << i + 2 << endl;
     setStep(LOW, HIGH, LOW, HIGH);
     delay(DELAY);
     pauze(500);
+
     cout << "Step " << i + 3 << endl;
-    setStep(LOW, HIGH, HIGH, LOW);
-    delay(DELAY);
-    pauze(500);
-    cout << "Step " << i + 4 << endl;
     setStep(HIGH, LOW, LOW, HIGH);
     delay(DELAY);
+    pauze(500);
+
+    cout << "Step " << i + 4 << endl;
+    setStep(LOW, HIGH, HIGH, LOW);
     delay(DELAY);
     pauze(500);
-
-    setStep(LOW, HIGH, HIGH, LOW);
-    delay(DELAY * 4);
-    pauze(500);
-
-    //setStep(HIGH, LOW, LOW, HIGH);
-    //delay(DELAY * 4);
-    //pauze(500);
   }
 
   turnOff();
