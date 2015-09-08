@@ -29,6 +29,7 @@ The compile command
 * Coded the first test ride
 * Runned the first test ride (successful)
 * Named the rover Wanderlust
+* Added basic OO classes for the motors
 
 [1]: https://www.raspberrypi.org/
 [2]: https://www.raspberrypi.org/downloads/raspbian/
