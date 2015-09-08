@@ -3,6 +3,9 @@
 
 #include "abstractport.h"
 
+enum PortType { INPUT, OUTPUT, PWM_OUTPUT};
+
+template <PortType T>
 class Port : public AbstractPort {
 public:
     Port(unsigned int port_number, unsigned int state = 0);
@@ -15,6 +18,7 @@ public:
 
 };
 
-Port::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_number, state) { }
+template <PortType T>
+Port<T>::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_number, state) { }
 
 #endif //RASPBERRYPI_PROJECT_PORT_H

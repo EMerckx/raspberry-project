@@ -6,8 +6,8 @@
 
 class Motor : public AbstractMotor, public MotorControllerPort {
 public:
-    Motor(unsigned int enable_port, unsigned int enable_port_state, unsigned int port_1,
-          unsigned int port_1_state, unsigned int port_2, unsigned int port_2_state, int speed = 0);
+    Motor(unsigned int port_1, unsigned int port_1_state, unsigned int port_2, unsigned int port_2_state,
+          int speed = 0);
 
     virtual void Off();
 
@@ -19,28 +19,27 @@ public:
 
 };
 
-Motor::Motor(unsigned int enable_port, unsigned int enable_port_state, unsigned int port_1,
-             unsigned int port_1_state, unsigned int port_2, unsigned int port_2_state, int speed)
-        : MotorControllerPort(enable_port, enable_port_state, port_1, port_1_state, port_2, port_2_state),
+Motor::Motor(unsigned int port_1, unsigned int port_1_state, unsigned int port_2, unsigned int port_2_state, int speed)
+        : MotorControllerPort(port_1, port_1_state, port_2, port_2_state),
           AbstractMotor(speed) {
     Off();
 }
 
 void Motor::Off() {
     this->set_speed(0);
-    this->set_states(0, 0, 0);
+    this->set_states(0, 0);
 }
 
 void Motor::Forward() {
-    this->set_states(1, 1, 0);
+    this->set_states(1, 0);
 }
 
 void Motor::Reverse() {
-    this->set_states(1, 0, 1);
+    this->set_states(0, 1);
 }
 
 void Motor::Brake() {
-    this->set_states(1, 0, 0);
+    this->set_states(0, 0);
 }
 
 
