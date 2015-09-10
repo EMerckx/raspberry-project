@@ -33,6 +33,8 @@ The compile command
 
 8 sep 2015
 * Rebuilt the rover (second design)
+* Changed the code for the test ride
+* Changed the Port class
 
 [1]: https://www.raspberrypi.org/
 [2]: https://www.raspberrypi.org/downloads/raspbian/
