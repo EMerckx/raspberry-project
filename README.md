@@ -31,6 +31,9 @@ The compile command
 * Named the rover Wanderlust
 * Added basic OO classes for the motors
 
+8 sep 2015
+* Rebuilt the rover (second design)
+
 [1]: https://www.raspberrypi.org/
 [2]: https://www.raspberrypi.org/downloads/raspbian/
 [3]: http://wiringpi.com/
