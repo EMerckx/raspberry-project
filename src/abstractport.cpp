@@ -1,3 +1,5 @@
+#include "abstractport.h"
+
 AbstractPort::AbstractPort(unsigned int port_number, unsigned int state) {
     port_number_ = port_number;
     state_ = state;
