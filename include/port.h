@@ -12,7 +12,7 @@ private:
     void Write();
 
     // reads the state (0 or 1) from the port
-    virtual unsigned int Read() const;
+    unsigned int Read() const;
 
 public:
     Port(unsigned int port_number, unsigned int state = 0);
