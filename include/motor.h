@@ -11,11 +11,11 @@ public:
 
     virtual void Off();
 
-    virtual void Forward() = 0;
+    virtual void Forward();
 
-    virtual void Reverse() = 0;
+    virtual void Reverse();
 
-    virtual void Brake() = 0;
+    virtual void Brake();
 
 };
 
@@ -41,6 +41,5 @@ void Motor::Reverse() {
 void Motor::Brake() {
     this->set_states(0, 0);
 }
-
 
 #endif //RASPBERRYPI_PROJECT_MOTOR_H
