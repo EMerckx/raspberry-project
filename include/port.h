@@ -4,13 +4,8 @@
 #include "abstractport.h"
 #include "wiringPi.h"
 
-// wiringPi supports the PortTypes: INPUT, OUTPUT, PWM_OUTPUT
-// we need only INPUT and OUTPUT
-enum PortType {
-    INPUT, OUTPUT
-};
-
-template<PortType T>
+// T stands for INPUT or OUTPUT from wiringPi
+template<int T>
 class Port : public AbstractPort {
 private:
     // writes the state (0 or 1) to the port

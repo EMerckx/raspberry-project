@@ -1,6 +1,6 @@
 #include "port.h"
 
-template<PortType T>
+template<int T>
 Port<T>::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_number, state) {
     if (T == INPUT) {
         pinMode(port_number, INPUT);
@@ -10,7 +10,7 @@ Port<T>::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_
     }
 }
 
-template<PortType T>
+template<int T>
 unsigned int Port<T>::state() const {
     if (T == INPUT) {
         state_ = Read();
@@ -18,7 +18,7 @@ unsigned int Port<T>::state() const {
     return state_;
 }
 
-template<PortType T>
+template<int T>
 void Port<T>::set_state(unsigned int state) {
     if (T == OUTPUT) {
         state_ = state;
@@ -26,14 +26,14 @@ void Port<T>::set_state(unsigned int state) {
     }
 }
 
-template<PortType T>
+template<int T>
 void Port<T>::Write() {
     if (T == OUTPUT) {
         digitalWrite(port_number_, state_);
     }
 }
 
-template<PortType T>
+template<int T>
 unsigned int Port<T>::Read() const {
     if (T == INPUT) {
         digitalRead(port_number_, state_);
