@@ -4,7 +4,7 @@ MotorControllerPort::MotorControllerPort(unsigned int port_1, unsigned int port_
                                          unsigned int port_2_state) :
         port_1_(port_1, port_1_state), port_2_(port_2, port_2_state) { }
 
-Port <OUTPUT> MotorControllerPort::port_1() const {
+Port  <OUTPUT> MotorControllerPort::port_1() const {
     return port_1_;
 }
 

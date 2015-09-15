@@ -22,7 +22,7 @@ template<int T>
 void Port<T>::set_state(unsigned int state) {
     if (T == OUTPUT) {
         state_ = state;
-        Write(state);
+        Write();
     }
 }
 
@@ -36,6 +36,7 @@ void Port<T>::Write() {
 template<int T>
 unsigned int Port<T>::Read() const {
     if (T == INPUT) {
-        digitalRead(port_number_, state_);
+        state_ = digitalRead(port_number_, state_);
     }
+    return state_;
 }
