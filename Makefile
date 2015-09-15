@@ -1,7 +1,7 @@
 CC := g++-4.7 -std=c++11 # This is the main compiler
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/runner
+TARGET := build/runner
  
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
