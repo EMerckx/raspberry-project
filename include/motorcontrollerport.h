@@ -5,16 +5,16 @@
 
 class MotorControllerPort {
 private:
-    Port<OUTPUT> port_1_;
-    Port<OUTPUT> port_2_;
+    Port port_1_;
+    Port port_2_;
 public:
     MotorControllerPort(unsigned int port_1, unsigned int port_1_state, unsigned int port_2, unsigned int port_2_state);
 
-    Port<OUTPUT> port_1() const;
+    Port port_1() const;
 
     void set_port_1(unsigned int port_number, unsigned int state);
 
-    Port<OUTPUT> port_2() const;
+    Port port_2() const;
 
     void set_port_2(unsigned int port_number, unsigned int state);
 

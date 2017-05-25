@@ -4,9 +4,9 @@
 #include "abstractport.h"
 #include "wiringPi.h"
 
-// T stands for INPUT or OUTPUT from wiringPi
-template<int T>
 class Port : public AbstractPort {
+private:
+	int mode_;
 private:
     // writes the state (0 or 1) to the port
     void Write();
@@ -15,7 +15,10 @@ private:
     unsigned int Read() const;
 
 public:
-    Port(unsigned int port_number, unsigned int state = 0);
+	// mode stands for INPUT or OUTPUT from wiringPi
+    Port(int mode, unsigned int port_number, unsigned int state = 0);
+
+    int mode() const;
 
     unsigned int state() const;
 
