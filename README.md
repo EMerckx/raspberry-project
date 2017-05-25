@@ -36,6 +36,10 @@ The compile command
 * Changed the code for the test ride
 * Changed the Port class
 
+25 may 2017
+* Dusted off rover
+* Tried to fix compilation issues of the Port class
+
 [1]: https://www.raspberrypi.org/
 [2]: https://www.raspberrypi.org/downloads/raspbian/
 [3]: http://wiringpi.com/
