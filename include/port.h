@@ -1,6 +1,8 @@
 #ifndef RASPBERRYPI_PROJECT_PORT_H
 #define RASPBERRYPI_PROJECT_PORT_H
 
+#include <string>
+
 #include "abstractport.h"
 #include "wiringPi.h"
 
