@@ -21,6 +21,8 @@ public:
 
     void set_state(unsigned int state);
 
+    string to_string() const;
+
 };
 
 #endif //RASPBERRYPI_PROJECT_PORT_H

@@ -40,3 +40,18 @@ unsigned int Port<T>::Read() const {
     }
     return state_;
 }
+
+template<int T>
+unsigned int Port<T>::to_string() const {
+    string str = "Port<";
+    if (T == INPUT) {
+        str += "INPUT";
+    } else {
+        str += "OUTPUT";
+    }
+    str += "> { ";
+    str += "port_number = " + port_number + ", ";
+    str += "state = " + state_;
+    str += " }";
+    return str;
+}
