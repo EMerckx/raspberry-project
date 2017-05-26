@@ -42,7 +42,7 @@ unsigned int Port<T>::Read() const {
 }
 
 template<int T>
-unsigned int Port<T>::to_string() const {
+string Port<T>::to_string() const {
     string str = "Port<";
     if (T == INPUT) {
         str += "INPUT";
