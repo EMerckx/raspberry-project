@@ -11,7 +11,7 @@ Port<OUTPUT>::Port(unsigned int port_number, unsigned int state) : AbstractPort(
 }
 
 template<int T>
-unsigned int Port<T>::state() const {
+unsigned int Port<T>::state() {
     if (T == INPUT) {
         state_ = Read();
     }
@@ -34,7 +34,7 @@ void Port<T>::Write() {
 }
 
 template<int T>
-unsigned int Port<T>::Read() const {
+unsigned int Port<T>::Read() {
     if (T == INPUT) {
         state_ = digitalRead(port_number_);
     }

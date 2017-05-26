@@ -16,12 +16,12 @@ private:
     void Write();
 
     // reads the state (0 or 1) from the port
-    unsigned int Read() const;
+    unsigned int Read();
 
 public:
     Port(unsigned int port_number, unsigned int state = 0);
 
-    unsigned int state() const;
+    unsigned int state();
 
     void set_state(unsigned int state);
 

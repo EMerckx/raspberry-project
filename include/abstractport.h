@@ -11,7 +11,7 @@ private:
     virtual void Write() = 0;
 
     // reads the state (0 or 1) from the port
-    virtual unsigned int Read() const = 0;
+    virtual unsigned int Read() = 0;
 
 public:
     AbstractPort(unsigned int port_number, unsigned int state = 0);
