@@ -1,13 +1,11 @@
 #include "port.h"
 
-template<int T>
-Port<T>::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_number, state) {
-    if (T == INPUT) {
-        pinMode(port_number, INPUT);
-    }
-    else {
-        pinMode(port_number, OUTPUT);
-    }
+Port<INPUT>::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_number, state) {
+    pinMode(port_number, INPUT);
+}
+
+Port<OUTPUT>::Port(unsigned int port_number, unsigned int state) : AbstractPort(port_number, state) {
+    pinMode(port_number, OUTPUT);
 }
 
 template<int T>
@@ -41,15 +39,16 @@ unsigned int Port<T>::Read() const {
     return state_;
 }
 
-template<int T>
-string Port<T>::to_string() const {
-    string str = "Port<";
-    if (T == INPUT) {
-        str += "INPUT";
-    } else {
-        str += "OUTPUT";
-    }
-    str += "> { ";
+string Port<INPUT>::to_string() const {
+    string str = "Port<INPUT> { ";
+    str += "port_number = " + port_number + ", ";
+    str += "state = " + state_;
+    str += " }";
+    return str;
+}
+
+string Port<OUTPUT>::to_string() const {
+    string str = "Port<OUTPUT> { ";
     str += "port_number = " + port_number + ", ";
     str += "state = " + state_;
     str += " }";
