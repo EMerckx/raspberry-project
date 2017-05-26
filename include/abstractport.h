@@ -2,10 +2,11 @@
 #define RASPBERRYPI_PROJECT_ABSTRACTPORT_H
 
 class AbstractPort {
-private:
+protected:
     unsigned int port_number_;
     unsigned int state_;
 
+private:
     // writes the state (0 or 1) to the port
     virtual void Write() = 0;
 
