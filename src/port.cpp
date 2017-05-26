@@ -44,17 +44,17 @@ unsigned int Port<T>::Read() {
 template <>
 string Port<INPUT>::to_string() const {
     string str = "Port<INPUT> { ";
-    str += "port_number = " + port_number_ + ", ";
-    str += "state = " + state_;
-    str += " }";
+    str.append("port_number = " + port_number_ + ", ");
+    str.append("state = " + state_);
+    str.append(" }");
     return str;
 }
 
 template <>
 string Port<OUTPUT>::to_string() const {
     string str = "Port<OUTPUT> { ";
-    str += "port_number = " + port_number_ + ", ";
-    str += "state = " + state_;
-    str += " }";
+    str.append("port_number = " + port_number_ + ", ");
+    str.append("state = " + state_);
+    str.append(" }");
     return str;
 }
