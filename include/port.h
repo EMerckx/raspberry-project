@@ -6,6 +6,8 @@
 #include "abstractport.h"
 #include "wiringPi.h"
 
+using std::string;
+
 // T stands for INPUT or OUTPUT from wiringPi
 template<int T>
 class Port : public AbstractPort {
