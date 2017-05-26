@@ -26,6 +26,7 @@
 *.exe
 *.out
 *.app
+build/runner
 
 # JetBrains CLion
 .idea/
