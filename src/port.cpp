@@ -41,7 +41,7 @@ unsigned int Port<T>::Read() {
     return state_;
 }
 
-template <>
+//template <>
 ostream& operator<<(ostream& os, const Port<INPUT>& port) {
 {
     os <<  "Port<INPUT> { ";
@@ -50,7 +50,7 @@ ostream& operator<<(ostream& os, const Port<INPUT>& port) {
     return os;
 }
 
-template <>
+//template <>
 ostream& operator<<(ostream& os, const Port<OUTPUT>& port) {
 {
     os <<  "Port<OUTPUT> { ";
