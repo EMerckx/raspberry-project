@@ -43,7 +43,6 @@ unsigned int Port<T>::Read() {
 
 //template <>
 ostream& operator<<(ostream& os, const Port<INPUT>& port) {
-{
     os <<  "Port<INPUT> { ";
     os << "port_number = " << port.port_number_ << ", ";
     os << "state = " << port.state_ << " }";
@@ -52,7 +51,6 @@ ostream& operator<<(ostream& os, const Port<INPUT>& port) {
 
 //template <>
 ostream& operator<<(ostream& os, const Port<OUTPUT>& port) {
-{
     os <<  "Port<OUTPUT> { ";
     os << "port_number = " << port.port_number_ << ", ";
     os << "state = " << port.state_ << " }";
