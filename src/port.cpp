@@ -47,16 +47,6 @@ void Port<T>::Write() {
     }
 }
 
-/*template<>
-void Port<INPUT>::Write() {
-    // do nothing
-}
-
-template<>
-void Port<OUTPUT>::Write() {
-    digitalWrite(port_number_, state_);
-}*/
-
 /***************************/
 
 template<int T>
@@ -66,17 +56,6 @@ unsigned int Port<T>::Read() {
     }
     return state_;
 }
-/*
-template<>
-unsigned int Port<INPUT>::Read() {
-    state_ = digitalRead(port_number_);
-    return state_;
-}
-
-template<>
-unsigned int Port<OUTPUT>::Read() {
-    return state_;
-}*/
 
 /***************************/
 
