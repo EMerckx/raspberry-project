@@ -40,7 +40,14 @@ void Port<OUTPUT>::set_state(unsigned int state) {
 
 /***************************/
 
-template<>
+template<int T>
+void Port<T>::Write() {
+    if(T == OUTPUT) {
+        digitalWrite(port_number_, state_);
+    }
+}
+
+/*template<>
 void Port<INPUT>::Write() {
     // do nothing
 }
@@ -48,10 +55,18 @@ void Port<INPUT>::Write() {
 template<>
 void Port<OUTPUT>::Write() {
     digitalWrite(port_number_, state_);
-}
+}*/
 
 /***************************/
 
+template<int T>
+void Port<T>::Read() {
+    if(T == INPUT) {
+        state_ = digitalRead(port_number_);
+    }
+    return state_;
+}
+/*
 template<>
 unsigned int Port<INPUT>::Read() {
     state_ = digitalRead(port_number_);
@@ -61,7 +76,7 @@ unsigned int Port<INPUT>::Read() {
 template<>
 unsigned int Port<OUTPUT>::Read() {
     return state_;
-}
+}*/
 
 /***************************/
 
