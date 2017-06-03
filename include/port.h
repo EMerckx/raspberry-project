@@ -27,8 +27,6 @@ public:
 
     void set_state(unsigned int state);
 
-    //string to_string() const;
-
     //friend ostream& operator<< <>(ostream& os, const Port& port);
 
     friend ostream& operator<<(ostream& os, const Port<INPUT>& port);
