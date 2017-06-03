@@ -16,6 +16,14 @@ int main() {
 
     cout << p << endl;
 
+    cout << "Setting port to state zero." << endl;
+
+    p.set_state(0);
+
+    cout << "Printing output port." << endl;
+
+    cout << p << endl;
+
     return 0;
 
 }
