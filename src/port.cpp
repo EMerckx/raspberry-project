@@ -42,6 +42,24 @@ unsigned int Port<T>::Read() {
 }
 
 template <>
+ostream& Port<INPUT>::operator<<(ostream& os, const Port<INPUT>& port) {
+{
+    os <<  "Port<INPUT> { ";
+    os << "port_number = " << port.port_number_ << ", ";
+    os << "state = " << port.state_ << " }";
+    return os;
+}
+
+template <>
+ostream& Port<OUTPUT>::operator<<(ostream& os, const Port<OUTPUT>& port) {
+{
+    os <<  "Port<OUTPUT> { ";
+    os << "port_number = " << port.port_number_ << ", ";
+    os << "state = " << port.state_ << " }";
+    return os;
+}
+
+/*template <>
 string Port<INPUT>::to_string() const {
     string str = "Port<INPUT> { ";
 
@@ -69,4 +87,4 @@ string Port<OUTPUT>::to_string() const {
     str.append(" }");
 
     return str;
-}
+}*/
