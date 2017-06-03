@@ -10,6 +10,12 @@
 using std::ostream;
 using std::string;
 
+template<int T>
+class Port;
+
+template<int T>
+ostream& operator<<(ostream& os, const Port<T>& port);
+
 // T stands for INPUT or OUTPUT from wiringPi
 template<int T>
 class Port : public AbstractPort {
@@ -29,7 +35,7 @@ public:
 
     //string to_string() const;
 
-    friend ostream& operator<<(ostream& os, const Port<T>& port);
+    friend ostream& operator<< <>(ostream& os, const Port& port);
 
 };
 
