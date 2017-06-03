@@ -6,12 +6,12 @@ using std::cout;
 using std::endl;
 
 // pin name = pin number
-const int ENA = 5;
-const int ENB = 6;
-const int IN1 = 0;
-const int IN2 = 1;
-const int IN3 = 2;
-const int IN4 = 3;
+const unsigned int ENA = 5;
+const unsigned int ENB = 6;
+const unsigned int IN1 = 0;
+const unsigned int IN2 = 1;
+const unsigned int IN3 = 2;
+const unsigned int IN4 = 3;
 
 const unsigned int BIT_HIGH = 1;
 const unsigned int BIT_LOW = 0;
@@ -28,8 +28,8 @@ void init() {
 
 void stop() {
   // pins ENA and ENB to state high
-  ena.state(BIT_LOW);
-  enb.state(BIT_LOW);
+  ena.set_state(BIT_LOW);
+  enb.set_state(BIT_LOW);
 }
 
 int main() {
