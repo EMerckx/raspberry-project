@@ -16,14 +16,14 @@ const unsigned int IN4 = 3;
 const unsigned int BIT_HIGH = 1;
 const unsigned int BIT_LOW = 0;
 
-Port<OUTPUT> ena;
-Port<OUTPUT> enb;
+Port<OUTPUT> ena(ENA, BIT_LOW);
+Port<OUTPUT> enb(ENB, BIT_LOW);
 
 
 void init() {
   // pins ENA and ENB to state high
-  ena = Port<OUTPUT>(ENA, BIT_HIGH);
-  enb = Port<OUTPUT>(ENB, BIT_HIGH);
+  ena.set_state(BIT_HIGH);
+  enb.set_state(BIT_HIGH);
 }
 
 void stop() {
