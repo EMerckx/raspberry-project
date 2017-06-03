@@ -60,7 +60,7 @@ void Port<OUTPUT>::Write() {
 /***************************/
 
 template<int T>
-void Port<T>::Read() {
+unsigned int Port<T>::Read() {
     if(T == INPUT) {
         state_ = digitalRead(port_number_);
     }
