@@ -14,7 +14,7 @@ int main() {
 
     cout << "Printing output port." << endl;
 
-    cout << p.to_string() << endl;    
+    cout << p << endl;
 
     return 0;
 
