@@ -13,32 +13,45 @@ const int IN2 = 1;
 const int IN3 = 2;
 const int IN4 = 3;
 
+const unsigned int BIT_HIGH = 1;
+const unsigned int BIT_LOW = 0;
+
 Port<OUTPUT> ena;
 Port<OUTPUT> enb;
 
 
 void init() {
   // pins ENA and ENB to state high
-  ena = Port<OUTPUT>(ENA, HIGH);
-  enb = Port<OUTPUT>(ENB, HIGH);
+  ena = Port<OUTPUT>(ENA, BIT_HIGH);
+  enb = Port<OUTPUT>(ENB, BIT_HIGH);
 }
 
 void stop() {
   // pins ENA and ENB to state high
-  ena.state(LOW);
-  enb.state(LOW);
+  ena.state(BIT_LOW);
+  enb.state(BIT_LOW);
 }
 
 int main() {
     cout << "Hello World!" << endl; 
-    
+
+    init();
+
+    cout << ena << endl << enb << endl;
+
+    delay(3000);
+
+    /**********/
+
     cout << "Creating output port." << endl; 
 
-    Port<OUTPUT> p(25, 1);
+    Port<OUTPUT> p(IN1, BIT_HIGH);
 
     cout << "Printing output port." << endl;
 
     cout << p << endl;
+
+    delay(3000);
 
     cout << "Setting port to state zero." << endl;
 
@@ -48,11 +61,7 @@ int main() {
 
     cout << p << endl;
 
-    // second half
-
-    init();
-
-    cout << ena << endl << enb << endl;
+    /**********/
 
     delay(3000);
 
