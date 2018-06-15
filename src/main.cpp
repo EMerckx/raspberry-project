@@ -14,6 +14,8 @@ const int IN2 = 1;
 const int IN3 = 2;
 const int IN4 = 3;
 
+//********************************************************************************************
+
 void initPins(){
   // pins for lines
   pinMode(IN1,OUTPUT);
@@ -39,6 +41,28 @@ void turnOff(){
   setStep(LOW,LOW,LOW,LOW);
 }
 
+
+//********************************************************************************************
+
+void leftForward() {
+  setStep(HIGH, LOW, LOW, LOW);
+}
+
+void leftBackward() {
+  setStep(LOW, HIGH, LOW, LOW);
+}
+
+void rightForward() {
+  setStep(LOW, LOW, HIGH, LOW);
+}
+
+void rightBackward() {
+  setStep(LOW, LOW, LOW, HIGH);
+}
+
+
+//********************************************************************************************
+
 int main(){
   wiringPiSetup();
 
@@ -46,30 +70,30 @@ int main(){
 
   turnOff();
   
-  pauze(3* DELAY);
+  pauze(3 * DELAY);
 
   
   for(int i=0; i<STEPS; i+=4){
-    
+
     cout << "Step " << i + 1 << endl;
-    setStep(HIGH, LOW, HIGH, LOW);
-    delay(DELAY);
-    pauze(500);
-    
+    leftForward();
+    delay(3 * DELAY);
+    pauze(2000);
+
     cout << "Step " << i + 2 << endl;
-    setStep(LOW, HIGH, LOW, HIGH);
-    delay(DELAY);
-    pauze(500);
+    leftBackward();
+    delay(3 * DELAY);
+    pauze(2000);
 
     cout << "Step " << i + 3 << endl;
-    setStep(HIGH, LOW, LOW, HIGH);
-    delay(DELAY);
-    pauze(500);
+    rightForward();
+    delay(3 * DELAY);
+    pauze(2000);
 
     cout << "Step " << i + 4 << endl;
-    setStep(LOW, HIGH, HIGH, LOW);
-    delay(DELAY);
-    pauze(500);
+    rightBackward();
+    delay(3 * DELAY);
+    pauze(2000);
   }
 
   turnOff();
