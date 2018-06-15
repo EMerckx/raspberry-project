@@ -12,6 +12,11 @@ The compile command
 
     g++-4.7 -std=c++11 file.cpp -lwiringPi
 
+Currently it is also possible to use the Makefile
+
+    make
+    ./build/runner
+
 ## Captain's log
 
 5 sep 2015
@@ -42,6 +47,12 @@ The compile command
 
 3 jun 2017
 * Fixed compilation issues of the Port class
+
+15 jun 2018
+* Had to reflash the Raspbian image on the Raspberry Pi
+* Abandoned the approach with multiple classes
+* Put working version back and used clearer method names
+* Added datetime to loggings
 
 [1]: https://www.raspberrypi.org/
 [2]: https://www.raspberrypi.org/downloads/raspbian/
