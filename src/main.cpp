@@ -44,22 +44,44 @@ void turnOff(){
 
 //********************************************************************************************
 
-void leftForward() {
+void leftWheelsForward() {
   setStep(HIGH, LOW, LOW, LOW);
 }
 
-void leftBackward() {
+void leftWheelsBackward() {
   setStep(LOW, HIGH, LOW, LOW);
 }
 
-void rightForward() {
+void rightWheelsForward() {
   setStep(LOW, LOW, HIGH, LOW);
 }
 
-void rightBackward() {
+void rightWheelsBackward() {
   setStep(LOW, LOW, LOW, HIGH);
 }
 
+
+//********************************************************************************************
+
+void goForward() {
+  cout << "Going forward." << endl;
+  setStep(HIGH, LOW, HIGH, LOW);
+}
+
+void goBackward() {
+  cout << "Going backward." << endl;
+  setStep(LOW, HIGH, LOW, HIGH);
+}
+
+void goLeft() {
+  cout << "Going left." << endl;
+  setStep(LOW, HIGH, HIGH, LOW);
+}
+
+void goRight() {
+  cout << "Going right." << endl;
+  setStep(HIGH, LOW, LOW, HIGH);
+}
 
 //********************************************************************************************
 
@@ -76,22 +98,22 @@ int main(){
   for(int i=0; i<STEPS; i+=4){
 
     cout << "Step " << i + 1 << endl;
-    leftForward();
+    goForward();
     delay(3 * DELAY);
     pauze(2000);
 
     cout << "Step " << i + 2 << endl;
-    leftBackward();
+    goBackward();
     delay(3 * DELAY);
     pauze(2000);
 
     cout << "Step " << i + 3 << endl;
-    rightForward();
+    goLeft();
     delay(3 * DELAY);
     pauze(2000);
 
     cout << "Step " << i + 4 << endl;
-    rightBackward();
+    goRight();
     delay(3 * DELAY);
     pauze(2000);
   }
